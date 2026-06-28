@@ -4,6 +4,8 @@ Firebase Cloud Functions importer for Grocery product CSV files.
 
 The function listens for CSV uploads in Firebase Storage, validates each row with Zod, upserts product documents in Cloud Firestore, moves successful files to `History/`, and emails maintainers after three failed attempts.
 
+See [docs/firestore-schema.md](docs/firestore-schema.md) for the Grocery Delivery System Firestore data model.
+
 ## CSV Structure
 
 Upload CSV files to the configured import folder, defaulting to `imports/products/`.
@@ -24,6 +26,13 @@ Supported aliases:
 - `category desc`, `category description`, `categoryDesc`
 - `new price`, `price`
 - `weightable`, `wieghtable`, `weighable`
+
+Each imported row writes:
+
+- Product catalog fields to `products/{ProductId}` without `categoryDesc` or `price`
+- Category descriptions to `categories/{categoryId}`
+- Imported prices to `PriceLists/{ProductId}`
+- Auto-increment integer `id` fields using `counters/{tableName}`
 
 ## Environment
 

@@ -104,6 +104,8 @@ export const importProductCsvOnUpload = onObjectFinalized(
         archivedFileName,
         rowCount: importResult.rowCount,
         upsertedCount: importResult.upsertedCount,
+        categoryUpsertedCount: importResult.categoryUpsertedCount,
+        priceListUpsertedCount: importResult.priceListUpsertedCount,
         batchCommitCount: importResult.batchCommitCount,
         durationMs: Date.now() - startedAt,
       });
