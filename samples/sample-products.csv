@@ -1,0 +1,6 @@
+ProductId,product desc,categoryId,category desc,new price,weightable
+1001,Milk 3 Percent,dairy,Dairy Products,7.50,false
+1002,White Bread,bakery,Bakery,6.90,false
+1003,Bananas,produce,Fruits and Vegetables,4.20,true
+1004,Tomatoes,produce,Fruits and Vegetables,5.80,true
+1005,Eggs 12 Pack,dairy,Dairy Products,14.90,false
